@@ -16,7 +16,7 @@ node {
                         sh "git config user.name serkancakar"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+harbor.datamarket.local:9443/app/spring-app.*+harbor.datamarket.local:9443/app/spring-app:${BUILD_NUMBER}+g' deployment.yaml"
+                        sh "sed -i 's+harbor.tmc.datamarket.local/app/spring-app.*+harbor.tmc.datamarket.local/app/spring-app:${BUILD_NUMBER}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${BUILD_NUMBER}'"
